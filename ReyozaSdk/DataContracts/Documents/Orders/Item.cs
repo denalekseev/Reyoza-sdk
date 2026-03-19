@@ -13,6 +13,9 @@ namespace ReyozaSdk.DataContracts.Documents.Orders
         [DataMember(Name = "ReyozaId")]
         public string ReyozaId { get; set; }
 
+        [DataMember(Name = "avitoId")]
+        public string AvitoId { get; set; }
+
         [DataMember(Name = "chatId")]
         public string ChatId { get; set; }
 
