@@ -23,6 +23,23 @@ namespace ReyozaSdk
             initReq.AddHeader("Accept", "application/json");
         }
 
+        /// <summary>
+        /// Передать статус заказа
+        /// </summary>
+        public void SendOrderStatus(string orderId, string supplierStatus, string trackingNumber)
+        {
+            var req = new SendOrderStatusRequest()
+            {
+                OrderId = orderId,
+                Action = SendOrderStatusAction.UpdateStatus,
+                SupplierStatus = supplierStatus,
+                TrackingNumber = trackingNumber
+            };
+
+            Post<GetOrdersResponse>($"", req,  r => InitRequest(r));
+        }
+
+
         public void AddQueryString(DataContracts.Documents.GetOrdersRequest req, IRestRequest initReq, string[] statuses, string[] ids)
         {
             InitRequest(initReq);
