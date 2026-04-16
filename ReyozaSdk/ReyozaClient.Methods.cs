@@ -19,7 +19,7 @@ namespace ReyozaSdk
 
         public void InitRequest(IRestRequest initReq)
         {
-            initReq.AddHeader("Content-Type", "application/json");
+            //initReq.AddHeader("Content-Type", "application/json");
             initReq.AddHeader("Accept", "application/json");
         }
 
